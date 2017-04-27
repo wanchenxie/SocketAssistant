@@ -1,0 +1,403 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		282DD0F61EB19EE3004516B4 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 282DD0F51EB19EE3004516B4 /* README.md */; };
+		283DE6BD1EAF37CD005FA830 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 283DE6BC1EAF37CD005FA830 /* main.m */; };
+		283DE6C01EAF37CD005FA830 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 283DE6BF1EAF37CD005FA830 /* AppDelegate.m */; };
+		283DE6C61EAF37CD005FA830 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 283DE6C41EAF37CD005FA830 /* Main.storyboard */; };
+		283DE6C81EAF37CD005FA830 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 283DE6C71EAF37CD005FA830 /* Assets.xcassets */; };
+		283DE6CB1EAF37CD005FA830 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 283DE6C91EAF37CD005FA830 /* LaunchScreen.storyboard */; };
+		283DE6D41EAF37E7005FA830 /* SocketAssitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 283DE6D31EAF37E7005FA830 /* SocketAssitViewController.m */; };
+		2A5A38F5B569C246E12E430B /* Pods_SocketAssit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28F6B785808D68EF731FD22C /* Pods_SocketAssit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		27B71B7140DDC08AFF76818A /* Pods-SocketAssit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocketAssit.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocketAssit/Pods-SocketAssit.release.xcconfig"; sourceTree = "<group>"; };
+		282DD0F51EB19EE3004516B4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		283DE6B81EAF37CD005FA830 /* SocketAssit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocketAssit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		283DE6BC1EAF37CD005FA830 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		283DE6BE1EAF37CD005FA830 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		283DE6BF1EAF37CD005FA830 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		283DE6C51EAF37CD005FA830 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		283DE6C71EAF37CD005FA830 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		283DE6CA1EAF37CD005FA830 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		283DE6CC1EAF37CD005FA830 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		283DE6D21EAF37E7005FA830 /* SocketAssitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketAssitViewController.h; sourceTree = "<group>"; };
+		283DE6D31EAF37E7005FA830 /* SocketAssitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketAssitViewController.m; sourceTree = "<group>"; };
+		28F6B785808D68EF731FD22C /* Pods_SocketAssit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocketAssit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BE262F905626E61292CE9D6 /* Pods-SocketAssit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocketAssit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocketAssit/Pods-SocketAssit.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		283DE6B51EAF37CD005FA830 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A5A38F5B569C246E12E430B /* Pods_SocketAssit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		283DE6AF1EAF37CD005FA830 = {
+			isa = PBXGroup;
+			children = (
+				283DE6BA1EAF37CD005FA830 /* SocketAssit */,
+				283DE6B91EAF37CD005FA830 /* Products */,
+				3B427A6D56F899FB0C817A2E /* Pods */,
+				B822D809E34233AA41E08338 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		283DE6B91EAF37CD005FA830 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				283DE6B81EAF37CD005FA830 /* SocketAssit.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		283DE6BA1EAF37CD005FA830 /* SocketAssit */ = {
+			isa = PBXGroup;
+			children = (
+				283DE6BE1EAF37CD005FA830 /* AppDelegate.h */,
+				283DE6BF1EAF37CD005FA830 /* AppDelegate.m */,
+				283DE6D21EAF37E7005FA830 /* SocketAssitViewController.h */,
+				283DE6D31EAF37E7005FA830 /* SocketAssitViewController.m */,
+				283DE6C41EAF37CD005FA830 /* Main.storyboard */,
+				283DE6BB1EAF37CD005FA830 /* Supporting Files */,
+			);
+			path = SocketAssit;
+			sourceTree = "<group>";
+		};
+		283DE6BB1EAF37CD005FA830 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				282DD0F51EB19EE3004516B4 /* README.md */,
+				283DE6C71EAF37CD005FA830 /* Assets.xcassets */,
+				283DE6C91EAF37CD005FA830 /* LaunchScreen.storyboard */,
+				283DE6CC1EAF37CD005FA830 /* Info.plist */,
+				283DE6BC1EAF37CD005FA830 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3B427A6D56F899FB0C817A2E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3BE262F905626E61292CE9D6 /* Pods-SocketAssit.debug.xcconfig */,
+				27B71B7140DDC08AFF76818A /* Pods-SocketAssit.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B822D809E34233AA41E08338 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				28F6B785808D68EF731FD22C /* Pods_SocketAssit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		283DE6B71EAF37CD005FA830 /* SocketAssit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 283DE6CF1EAF37CD005FA830 /* Build configuration list for PBXNativeTarget "SocketAssit" */;
+			buildPhases = (
+				77A90AB6CD1F8555276967CA /* [CP] Check Pods Manifest.lock */,
+				283DE6B41EAF37CD005FA830 /* Sources */,
+				283DE6B51EAF37CD005FA830 /* Frameworks */,
+				283DE6B61EAF37CD005FA830 /* Resources */,
+				E5498FA2F18127A5B6BB268E /* [CP] Embed Pods Frameworks */,
+				B7179A6A32B32B39DE8DCF11 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SocketAssit;
+			productName = SocketAssit;
+			productReference = 283DE6B81EAF37CD005FA830 /* SocketAssit.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		283DE6B01EAF37CD005FA830 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = wanchenxie;
+				TargetAttributes = {
+					283DE6B71EAF37CD005FA830 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = A8894S9NWM;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 283DE6B31EAF37CD005FA830 /* Build configuration list for PBXProject "SocketAssit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 283DE6AF1EAF37CD005FA830;
+			productRefGroup = 283DE6B91EAF37CD005FA830 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				283DE6B71EAF37CD005FA830 /* SocketAssit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		283DE6B61EAF37CD005FA830 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				283DE6CB1EAF37CD005FA830 /* LaunchScreen.storyboard in Resources */,
+				283DE6C81EAF37CD005FA830 /* Assets.xcassets in Resources */,
+				283DE6C61EAF37CD005FA830 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		77A90AB6CD1F8555276967CA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B7179A6A32B32B39DE8DCF11 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SocketAssit/Pods-SocketAssit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5498FA2F18127A5B6BB268E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SocketAssit/Pods-SocketAssit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		283DE6B41EAF37CD005FA830 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				283DE6D41EAF37E7005FA830 /* SocketAssitViewController.m in Sources */,
+				283DE6C01EAF37CD005FA830 /* AppDelegate.m in Sources */,
+				282DD0F61EB19EE3004516B4 /* README.md in Sources */,
+				283DE6BD1EAF37CD005FA830 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		283DE6C41EAF37CD005FA830 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				283DE6C51EAF37CD005FA830 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		283DE6C91EAF37CD005FA830 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				283DE6CA1EAF37CD005FA830 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		283DE6CD1EAF37CD005FA830 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		283DE6CE1EAF37CD005FA830 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		283DE6D01EAF37CD005FA830 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BE262F905626E61292CE9D6 /* Pods-SocketAssit.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = A8894S9NWM;
+				INFOPLIST_FILE = SocketAssit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wanchen.SocketAssit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		283DE6D11EAF37CD005FA830 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27B71B7140DDC08AFF76818A /* Pods-SocketAssit.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = A8894S9NWM;
+				INFOPLIST_FILE = SocketAssit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wanchen.SocketAssit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		283DE6B31EAF37CD005FA830 /* Build configuration list for PBXProject "SocketAssit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				283DE6CD1EAF37CD005FA830 /* Debug */,
+				283DE6CE1EAF37CD005FA830 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		283DE6CF1EAF37CD005FA830 /* Build configuration list for PBXNativeTarget "SocketAssit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				283DE6D01EAF37CD005FA830 /* Debug */,
+				283DE6D11EAF37CD005FA830 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 283DE6B01EAF37CD005FA830 /* Project object */;
+}
