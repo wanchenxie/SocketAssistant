@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		282DD0F61EB19EE3004516B4 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 282DD0F51EB19EE3004516B4 /* README.md */; };
 		283DE6BD1EAF37CD005FA830 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 283DE6BC1EAF37CD005FA830 /* main.m */; };
 		283DE6C01EAF37CD005FA830 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 283DE6BF1EAF37CD005FA830 /* AppDelegate.m */; };
 		283DE6C61EAF37CD005FA830 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 283DE6C41EAF37CD005FA830 /* Main.storyboard */; };
@@ -19,7 +18,6 @@
 
 /* Begin PBXFileReference section */
 		27B71B7140DDC08AFF76818A /* Pods-SocketAssit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocketAssit.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocketAssit/Pods-SocketAssit.release.xcconfig"; sourceTree = "<group>"; };
-		282DD0F51EB19EE3004516B4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		283DE6B81EAF37CD005FA830 /* SocketAssit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocketAssit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		283DE6BC1EAF37CD005FA830 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		283DE6BE1EAF37CD005FA830 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -80,7 +78,6 @@
 		283DE6BB1EAF37CD005FA830 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				282DD0F51EB19EE3004516B4 /* README.md */,
 				283DE6C71EAF37CD005FA830 /* Assets.xcassets */,
 				283DE6C91EAF37CD005FA830 /* LaunchScreen.storyboard */,
 				283DE6CC1EAF37CD005FA830 /* Info.plist */,
@@ -231,7 +228,6 @@
 			files = (
 				283DE6D41EAF37E7005FA830 /* SocketAssitViewController.m in Sources */,
 				283DE6C01EAF37CD005FA830 /* AppDelegate.m in Sources */,
-				282DD0F61EB19EE3004516B4 /* README.md in Sources */,
 				283DE6BD1EAF37CD005FA830 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
