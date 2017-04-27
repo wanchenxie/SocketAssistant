@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "028A5EAE44DC2C836ACCCC4522DA109B"
+               BlueprintIdentifier = "7CD76C159026609DB1056F6B7D97DC3D"
                BuildableName = "Pods_SocketAssit.framework"
                BlueprintName = "Pods-SocketAssit"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "028A5EAE44DC2C836ACCCC4522DA109B"
+            BlueprintIdentifier = "7CD76C159026609DB1056F6B7D97DC3D"
             BuildableName = "Pods_SocketAssit.framework"
             BlueprintName = "Pods-SocketAssit"
             ReferencedContainer = "container:Pods.xcodeproj">

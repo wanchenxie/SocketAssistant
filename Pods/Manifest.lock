@@ -2,13 +2,16 @@ PODS:
   - CocoaAsyncSocket (7.5.1):
     - CocoaAsyncSocket/GCD (= 7.5.1)
   - CocoaAsyncSocket/GCD (7.5.1)
+  - MBProgressHUD (1.0.0)
 
 DEPENDENCIES:
   - CocoaAsyncSocket
+  - MBProgressHUD (~> 1.0.0)
 
 SPEC CHECKSUMS:
   CocoaAsyncSocket: e0a7e93b2ffa411592ff87e58524fbbc9b95b4fa
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
 
-PODFILE CHECKSUM: fd7a910a1a7993858d8abf54fe44420bcae6a9af
+PODFILE CHECKSUM: 40c24d83ec19d5b7ed78d17123a4c28558544ac8
 
 COCOAPODS: 1.1.1

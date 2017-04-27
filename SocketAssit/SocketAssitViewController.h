@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+
+extern  NSString* ipAddressKey;
+extern  NSString* portNumKey;
+
 @interface SocketAssitViewController : UIViewController
+
 
 @end

@@ -8,6 +8,10 @@
 
 #import "SocketAssitViewController.h"
 #import "GCDAsyncSocket.h"
+#import "MBProgressHUD.h"
+
+NSString* ipAddressKey = @"ipAddress";
+NSString* portNumKey = @"portNum";
 
 @interface SocketAssitViewController ()<GCDAsyncSocketDelegate>
 
@@ -15,10 +19,12 @@
 @property (strong, nonatomic) IBOutlet UITextField *sendDataTextField;
 @property (strong, nonatomic) IBOutlet UITextField *hostPortTextTextField;
 @property (strong, nonatomic) IBOutlet UILabel *statusLabel;
+@property (strong, nonatomic) IBOutlet UIButton *connectBtn;
 
 
 @property (nonatomic, strong) GCDAsyncSocket *socket;
 @property (nonatomic, strong) dispatch_queue_t socketQueue;
+@property (nonatomic, assign) BOOL isConnected;
 
 @end
 
@@ -28,6 +34,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    NSString* ipAddress = [[NSUserDefaults standardUserDefaults] objectForKey:ipAddressKey];
+    NSString* portNum = [[NSUserDefaults standardUserDefaults] objectForKey:portNumKey];
+    
+    self.hostAddressTextField.text = ipAddress;
+    self.hostPortTextTextField.text = portNum;
+    
+    // Add notification for app resign
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveCurInfo) name:UIApplicationWillResignActiveNotification object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,6 +53,12 @@
 - (void)dealloc {
     [self.socket disconnect];
     self.socket = nil;
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
 }
 #pragma mark - Setter and Getter
 - (GCDAsyncSocket*)socket {
@@ -51,57 +72,24 @@
     return _socket;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - Private Methods
+- (void)startToConnect {
+    self.connectBtn.enabled = false;
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
 }
-*/
-- (IBAction)connectToHost:(UIButton *)sender {
-    if ([self.hostAddressTextField.text isEqualToString:@""]
-        || [self.hostPortTextTextField.text isEqualToString:@""]) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Host Address" message:@"Address or Port is empty" preferredStyle:UIAlertControllerStyleAlert];
-        
-        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
-        [alert addAction:ok];
-        
-        [self presentViewController:alert animated:YES completion:nil];
-    }
-    
-    else {
-        
-        NSError *error;
-        NSString *portStr = self.hostPortTextTextField.text;
-        
-        NSLog(@"port = %ld", [portStr integerValue]);
-        
-        [self.socket connectToHost:self.hostAddressTextField.text onPort:[portStr integerValue] error:&error];
-        if (error != nil) {
-            NSLog(@"Error occur when connect... %@", [error userInfo]);
-        }else {
-            self.statusLabel.text = @"connected";
-        }
-    }
-    
-    
+
+- (void)endToConnect {
    
+    self.connectBtn.enabled = true;
     
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+}
+- (void)saveCurInfo {
+    [[NSUserDefaults standardUserDefaults] setObject:self.hostAddressTextField.text forKey:ipAddressKey];
+    [[NSUserDefaults standardUserDefaults] setObject:self.hostPortTextTextField.text forKey:portNumKey];
 }
 
-
-- (IBAction)sendDataToHost:(UIButton *)sender {
-    NSString *inputStr = self.sendDataTextField.text;
-    
-    NSData *dat = [self stringToByte:inputStr];
-   
-    NSLog(@"dat = %@", dat);
-    
-    [self.socket writeData:dat withTimeout:5 tag:1000.0];
-    
-}
 
 -(NSData*)stringToByte:(NSString*)string//字符串转换为16位Data
 {
@@ -139,6 +127,100 @@
     return bytes;
 }
 
+#pragma mark - Actions
+- (IBAction)screenTapped:(UIControl *)sender {
+    
+    [self.view endEditing:YES];
+}
 
+
+- (IBAction)disConnectOrConnectToHost:(UIButton *)sender {
+    
+    if (self.isConnected == false) {
+        if ([self.hostAddressTextField.text isEqualToString:@""]
+            || [self.hostPortTextTextField.text isEqualToString:@""]) {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Host Address" message:@"Address or Port is empty" preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+            [alert addAction:ok];
+            
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+        
+        else {
+            
+            
+            NSError *error;
+            NSString *portStr = self.hostPortTextTextField.text;
+            
+            NSLog(@"port = %ld", [portStr integerValue]);
+            
+            [self startToConnect];
+            
+            [self.socket disconnect];
+            
+            [self.socket connectToHost:self.hostAddressTextField.text onPort:[portStr integerValue] error:&error];
+            if (error != nil) {
+                
+                
+                NSLog(@"Error occur when connect... %@", [error userInfo]);
+                
+                [self endToConnect];
+            }
+        }
+
+    }
+    
+    else {
+        [self.socket disconnect];
+    }
+    
+    
+   
+    
+}
+
+
+- (IBAction)sendDataToHost:(UIButton *)sender {
+    NSString *inputStr = self.sendDataTextField.text;
+    
+    NSData *dat = [self stringToByte:inputStr];
+   
+    NSLog(@"dat = %@", dat);
+    
+    [self.socket writeData:dat withTimeout:10 tag:1000.0];
+    
+}
+
+
+#pragma mark - GCDAsyncSocketDelegate
+- (void)socket:(GCDAsyncSocket *)sock didConnectToHost:(NSString *)host port:(uint16_t)port {
+    __weak SocketAssitViewController* weakself = self;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [weakself endToConnect];
+        weakself.connectBtn.enabled = true;
+        weakself.statusLabel.text = @"Connected";
+        [weakself.connectBtn setTitle:@"Disconnect" forState:UIControlStateNormal];
+    });
+    
+    self.isConnected = true;
+    
+    NSLog(@"Connect to host with ip address %@ and port %hu", host, port);
+}
+
+- (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)err {
+    self.isConnected = false;
+    
+    __weak SocketAssitViewController* weakSelf = self;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [weakSelf.connectBtn setTitle:@"Connect" forState:UIControlStateNormal];
+        weakSelf.statusLabel.text = @"Disconnected";
+    });
+}
+
+- (void)socket:(GCDAsyncSocket *)sock didWriteDataWithTag:(long)tag {
+    NSLog(@"Write to host with Tag %ld successfully.", tag);
+}
 
 @end

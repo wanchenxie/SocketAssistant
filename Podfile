@@ -7,5 +7,6 @@ target 'SocketAssit' do
 
   # Pods for SocketAssit
 pod 'CocoaAsyncSocket' 
+pod 'MBProgressHUD', '~> 1.0.0'
 
 end
