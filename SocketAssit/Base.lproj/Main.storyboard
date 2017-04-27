@@ -96,7 +96,7 @@
                                     <action selector="sendDataToHost:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4kS-RA-2iW"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="status..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3tN-g3-khB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Disconnected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3tN-g3-khB">
                                 <rect key="frame" x="113" y="250" width="149" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="149" id="XOg-Ir-f4Z"/>

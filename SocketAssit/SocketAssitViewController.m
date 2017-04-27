@@ -12,6 +12,7 @@
 
 NSString* ipAddressKey = @"ipAddress";
 NSString* portNumKey = @"portNum";
+NSString* sendDataKey = @"sendData";
 
 @interface SocketAssitViewController ()<GCDAsyncSocketDelegate>
 
@@ -35,11 +36,7 @@ NSString* portNumKey = @"portNum";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    NSString* ipAddress = [[NSUserDefaults standardUserDefaults] objectForKey:ipAddressKey];
-    NSString* portNum = [[NSUserDefaults standardUserDefaults] objectForKey:portNumKey];
-    
-    self.hostAddressTextField.text = ipAddress;
-    self.hostPortTextTextField.text = portNum;
+    [self loadDataFromUserDefault];
     
     // Add notification for app resign
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveCurInfo) name:UIApplicationWillResignActiveNotification object:nil];
@@ -73,6 +70,7 @@ NSString* portNumKey = @"portNum";
 }
 
 #pragma mark - Private Methods
+
 - (void)startToConnect {
     self.connectBtn.enabled = false;
     
@@ -85,9 +83,20 @@ NSString* portNumKey = @"portNum";
     
     [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
+
+- (void)loadDataFromUserDefault {
+    NSString* ipAddress = [[NSUserDefaults standardUserDefaults] objectForKey:ipAddressKey];
+    NSString* portNum = [[NSUserDefaults standardUserDefaults] objectForKey:portNumKey];
+    NSString* sendData = [[NSUserDefaults standardUserDefaults] objectForKey:sendDataKey];
+    
+    self.hostAddressTextField.text = ipAddress;
+    self.hostPortTextTextField.text = portNum;
+    self.sendDataTextField.text = sendData;
+}
 - (void)saveCurInfo {
     [[NSUserDefaults standardUserDefaults] setObject:self.hostAddressTextField.text forKey:ipAddressKey];
     [[NSUserDefaults standardUserDefaults] setObject:self.hostPortTextTextField.text forKey:portNumKey];
+    [[NSUserDefaults standardUserDefaults] setObject:self.sendDataTextField.text forKey:sendDataKey];
 }
 
 
@@ -148,12 +157,8 @@ NSString* portNumKey = @"portNum";
         }
         
         else {
-            
-            
             NSError *error;
             NSString *portStr = self.hostPortTextTextField.text;
-            
-            NSLog(@"port = %ld", [portStr integerValue]);
             
             [self startToConnect];
             
@@ -174,21 +179,31 @@ NSString* portNumKey = @"portNum";
     else {
         [self.socket disconnect];
     }
-    
-    
-   
-    
 }
 
 
 - (IBAction)sendDataToHost:(UIButton *)sender {
-    NSString *inputStr = self.sendDataTextField.text;
+    // If self.isConnected send the data to the host directly.
+    if (self.isConnected) {
+        NSString *inputStr = self.sendDataTextField.text;
+        
+        NSData *dat = [self stringToByte:inputStr];
+        
+        NSLog(@"dat = %@", dat);
+        
+        [self.socket writeData:dat withTimeout:10 tag:1000.0];
+    }
     
-    NSData *dat = [self stringToByte:inputStr];
-   
-    NSLog(@"dat = %@", dat);
+    // If the iPhone is not connected to host, tell the user to connect first.
+    else {
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"You should connect to the speaker first" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+        
+        [alert addAction:ok];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+    }
     
-    [self.socket writeData:dat withTimeout:10 tag:1000.0];
     
 }
 

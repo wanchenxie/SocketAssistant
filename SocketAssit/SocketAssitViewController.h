@@ -11,6 +11,7 @@
 
 extern  NSString* ipAddressKey;
 extern  NSString* portNumKey;
+extern  NSString* sendDataKey;
 
 @interface SocketAssitViewController : UIViewController
 
