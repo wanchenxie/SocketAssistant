@@ -9,23 +9,25 @@
 #import "SocketAssitViewController.h"
 #import "GCDAsyncSocket.h"
 #import "MBProgressHUD.h"
+#import "SocketViewModel.h"
+
 
 NSString* ipAddressKey = @"ipAddress";
 NSString* portNumKey = @"portNum";
 NSString* sendDataKey = @"sendData";
 
-@interface SocketAssitViewController ()<GCDAsyncSocketDelegate>
+@interface SocketAssitViewController ()<GCDAsyncSocketDelegate, SocketViewModelDelegate>
+
+@property (nonatomic, strong) SocketViewModel* socketViewModel;
 
 @property (strong, nonatomic) IBOutlet UITextField *hostAddressTextField;
 @property (strong, nonatomic) IBOutlet UITextField *sendDataTextField;
 @property (strong, nonatomic) IBOutlet UITextField *hostPortTextTextField;
+
 @property (strong, nonatomic) IBOutlet UILabel *statusLabel;
 @property (strong, nonatomic) IBOutlet UIButton *connectBtn;
 
 
-@property (nonatomic, strong) GCDAsyncSocket *socket;
-@property (nonatomic, strong) dispatch_queue_t socketQueue;
-@property (nonatomic, assign) BOOL isConnected;
 
 @end
 
@@ -38,8 +40,14 @@ NSString* sendDataKey = @"sendData";
     
     [self loadDataFromUserDefault];
     
+    self.socketViewModel = [[SocketViewModel alloc] init];
+    
+    
+    
     // Add notification for app resign
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveCurInfo) name:UIApplicationWillResignActiveNotification object:nil];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,8 +56,8 @@ NSString* sendDataKey = @"sendData";
 }
 
 - (void)dealloc {
-    [self.socket disconnect];
-    self.socket = nil;
+    [self.socketViewModel disconnect];
+    self.socketViewModel = nil;
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
@@ -58,16 +66,7 @@ NSString* sendDataKey = @"sendData";
     [super viewDidDisappear:animated];
 }
 #pragma mark - Setter and Getter
-- (GCDAsyncSocket*)socket {
-    
-    if (_socket == nil) {
-        // NULL stand for serial queue.
-        self.socketQueue = dispatch_queue_create("www.socketAssit.queue", NULL);
-        _socket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:self.socketQueue];
-    }
-    
-    return _socket;
-}
+
 
 #pragma mark - Private Methods
 
@@ -145,7 +144,11 @@ NSString* sendDataKey = @"sendData";
 
 - (IBAction)disConnectOrConnectToHost:(UIButton *)sender {
     
-    if (self.isConnected == false) {
+    // Connect to host
+    if (self.socketViewModel.isConnected == false) {
+        DDLogDebug(@"Socket is not connected");
+        
+        // The host and port number is empty.
         if ([self.hostAddressTextField.text isEqualToString:@""]
             || [self.hostPortTextTextField.text isEqualToString:@""]) {
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Host Address" message:@"Address or Port is empty" preferredStyle:UIAlertControllerStyleAlert];
@@ -156,42 +159,59 @@ NSString* sendDataKey = @"sendData";
             [self presentViewController:alert animated:YES completion:nil];
         }
         
-        else {
-            NSError *error;
-            NSString *portStr = self.hostPortTextTextField.text;
+        // Connect to the host with port number.
+        else {            
+            NSString* ipAddr = self.hostAddressTextField.text;
+            NSInteger port = [self.hostPortTextTextField.text integerValue];
             
+            // Indicator start to animate.
             [self startToConnect];
             
-            [self.socket disconnect];
-            
-            [self.socket connectToHost:self.hostAddressTextField.text onPort:[portStr integerValue] error:&error];
-            if (error != nil) {
+            //self.socketViewModel = [self socketViewModelWithHost:ipAddr andPort:port];
+            [self.socketViewModel connectToHost:ipAddr port:port withHandler:^(NSError *err) {
+                
+                DDLogDebug(@"connect with error %@", err);
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                    [self endToConnect];
+                    
+                    if (err == nil) {
+                        self.statusLabel.text = @"Connected";
+                        [self.connectBtn setTitle:@"Disconnect" forState:UIControlStateNormal];
+                    }
+                });
                 
                 
-                NSLog(@"Error occur when connect... %@", [error userInfo]);
                 
-                [self endToConnect];
-            }
+            }];
         }
 
     }
     
+    // Disconnect from host
     else {
-        [self.socket disconnect];
+        DDLogDebug(@"socket connected, the cliking will cause it's disconnecting");
+        [self.socketViewModel disconnect];
+        
+        self.statusLabel.text = @"Disconnected";
+        [self.connectBtn setTitle:@"Connect" forState:UIControlStateNormal];
     }
+    
+    DDLogDebug(@"End of the cliking operation.");
 }
 
 
 - (IBAction)sendDataToHost:(UIButton *)sender {
     // If self.isConnected send the data to the host directly.
-    if (self.isConnected) {
+    if (self.socketViewModel.isConnected) {
         NSString *inputStr = self.sendDataTextField.text;
         
         NSData *dat = [self stringToByte:inputStr];
         
         NSLog(@"dat = %@", dat);
         
-        [self.socket writeData:dat withTimeout:10 tag:1000.0];
+        //[self.socket writeData:dat withTimeout:10 tag:1000.0];
     }
     
     // If the iPhone is not connected to host, tell the user to connect first.
@@ -208,34 +228,9 @@ NSString* sendDataKey = @"sendData";
 }
 
 
-#pragma mark - GCDAsyncSocketDelegate
-- (void)socket:(GCDAsyncSocket *)sock didConnectToHost:(NSString *)host port:(uint16_t)port {
-    __weak SocketAssitViewController* weakself = self;
+#pragma mark - SocketViewModelDelegate
+- (void)initSocketWithResult:(NSError *)err {
     
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [weakself endToConnect];
-        weakself.connectBtn.enabled = true;
-        weakself.statusLabel.text = @"Connected";
-        [weakself.connectBtn setTitle:@"Disconnect" forState:UIControlStateNormal];
-    });
-    
-    self.isConnected = true;
-    
-    NSLog(@"Connect to host with ip address %@ and port %hu", host, port);
-}
-
-- (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)err {
-    self.isConnected = false;
-    
-    __weak SocketAssitViewController* weakSelf = self;
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [weakSelf.connectBtn setTitle:@"Connect" forState:UIControlStateNormal];
-        weakSelf.statusLabel.text = @"Disconnected";
-    });
-}
-
-- (void)socket:(GCDAsyncSocket *)sock didWriteDataWithTag:(long)tag {
-    NSLog(@"Write to host with Tag %ld successfully.", tag);
 }
 
 @end

@@ -1,17 +1,25 @@
 PODS:
-  - CocoaAsyncSocket (7.5.1):
-    - CocoaAsyncSocket/GCD (= 7.5.1)
-  - CocoaAsyncSocket/GCD (7.5.1)
+  - CocoaAsyncSocket (7.6.0)
+  - CocoaLumberjack (2.4.0):
+    - CocoaLumberjack/Default (= 2.4.0)
+    - CocoaLumberjack/Extensions (= 2.4.0)
+  - CocoaLumberjack/Core (2.4.0)
+  - CocoaLumberjack/Default (2.4.0):
+    - CocoaLumberjack/Core
+  - CocoaLumberjack/Extensions (2.4.0):
+    - CocoaLumberjack/Default
   - MBProgressHUD (1.0.0)
 
 DEPENDENCIES:
-  - CocoaAsyncSocket
+  - CocoaAsyncSocket (~> 7.4)
+  - CocoaLumberjack (~> 2.2)
   - MBProgressHUD (~> 1.0.0)
 
 SPEC CHECKSUMS:
-  CocoaAsyncSocket: e0a7e93b2ffa411592ff87e58524fbbc9b95b4fa
+  CocoaAsyncSocket: b9d5589f07baf9de8f34cc25abd4fcba28f13805
+  CocoaLumberjack: aa9dcab71bdf9eaf2a63bbd9ddc87863efe45457
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
 
-PODFILE CHECKSUM: 40c24d83ec19d5b7ed78d17123a4c28558544ac8
+PODFILE CHECKSUM: 78fb03fbca810a874fd5322ecc32683ca48e125b
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.1

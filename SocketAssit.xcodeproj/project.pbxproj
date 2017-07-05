@@ -13,11 +13,12 @@
 		283DE6C81EAF37CD005FA830 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 283DE6C71EAF37CD005FA830 /* Assets.xcassets */; };
 		283DE6CB1EAF37CD005FA830 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 283DE6C91EAF37CD005FA830 /* LaunchScreen.storyboard */; };
 		283DE6D41EAF37E7005FA830 /* SocketAssitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 283DE6D31EAF37E7005FA830 /* SocketAssitViewController.m */; };
-		2A5A38F5B569C246E12E430B /* Pods_SocketAssit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28F6B785808D68EF731FD22C /* Pods_SocketAssit.framework */; };
+		2852132D1F05EF73002BE870 /* SocketViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2852132C1F05EF73002BE870 /* SocketViewModel.m */; };
+		285213311F05EFA1002BE870 /* SocketModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 285213301F05EFA1002BE870 /* SocketModel.m */; };
+		34533F56E65F734A49A587F3 /* libPods-SocketAssit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0CC42CF1407FD0753440B6 /* libPods-SocketAssit.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		27B71B7140DDC08AFF76818A /* Pods-SocketAssit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocketAssit.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocketAssit/Pods-SocketAssit.release.xcconfig"; sourceTree = "<group>"; };
 		283DE6B81EAF37CD005FA830 /* SocketAssit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocketAssit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		283DE6BC1EAF37CD005FA830 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		283DE6BE1EAF37CD005FA830 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -28,8 +29,14 @@
 		283DE6CC1EAF37CD005FA830 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		283DE6D21EAF37E7005FA830 /* SocketAssitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketAssitViewController.h; sourceTree = "<group>"; };
 		283DE6D31EAF37E7005FA830 /* SocketAssitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketAssitViewController.m; sourceTree = "<group>"; };
-		28F6B785808D68EF731FD22C /* Pods_SocketAssit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocketAssit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3BE262F905626E61292CE9D6 /* Pods-SocketAssit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocketAssit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocketAssit/Pods-SocketAssit.debug.xcconfig"; sourceTree = "<group>"; };
+		2852132B1F05EF73002BE870 /* SocketViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketViewModel.h; sourceTree = "<group>"; };
+		2852132C1F05EF73002BE870 /* SocketViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketViewModel.m; sourceTree = "<group>"; };
+		2852132F1F05EFA1002BE870 /* SocketModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketModel.h; sourceTree = "<group>"; };
+		285213301F05EFA1002BE870 /* SocketModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketModel.m; sourceTree = "<group>"; };
+		2856CC2E1F0B36D0000AF33C /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		4857BF8D2E1DC5F4185B2FEF /* Pods-SocketAssit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocketAssit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocketAssit/Pods-SocketAssit.debug.xcconfig"; sourceTree = "<group>"; };
+		8C0CC42CF1407FD0753440B6 /* libPods-SocketAssit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SocketAssit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA4A8A90B38B29EE1687C0BC /* Pods-SocketAssit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocketAssit.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocketAssit/Pods-SocketAssit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,7 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A5A38F5B569C246E12E430B /* Pods_SocketAssit.framework in Frameworks */,
+				34533F56E65F734A49A587F3 /* libPods-SocketAssit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -49,8 +56,8 @@
 			children = (
 				283DE6BA1EAF37CD005FA830 /* SocketAssit */,
 				283DE6B91EAF37CD005FA830 /* Products */,
-				3B427A6D56F899FB0C817A2E /* Pods */,
-				B822D809E34233AA41E08338 /* Frameworks */,
+				33CC91FD23BFD3BAE052DD84 /* Pods */,
+				C4BA72D3B3312D56DB3D0D7C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,9 +74,9 @@
 			children = (
 				283DE6BE1EAF37CD005FA830 /* AppDelegate.h */,
 				283DE6BF1EAF37CD005FA830 /* AppDelegate.m */,
-				283DE6D21EAF37E7005FA830 /* SocketAssitViewController.h */,
-				283DE6D31EAF37E7005FA830 /* SocketAssitViewController.m */,
-				283DE6C41EAF37CD005FA830 /* Main.storyboard */,
+				285213321F05EFA6002BE870 /* Model */,
+				2852132E1F05EF84002BE870 /* ViewModel */,
+				285213331F05EFB7002BE870 /* View */,
 				283DE6BB1EAF37CD005FA830 /* Supporting Files */,
 			);
 			path = SocketAssit;
@@ -80,25 +87,54 @@
 			children = (
 				283DE6C71EAF37CD005FA830 /* Assets.xcassets */,
 				283DE6C91EAF37CD005FA830 /* LaunchScreen.storyboard */,
+				2856CC2E1F0B36D0000AF33C /* PrefixHeader.pch */,
 				283DE6CC1EAF37CD005FA830 /* Info.plist */,
 				283DE6BC1EAF37CD005FA830 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		3B427A6D56F899FB0C817A2E /* Pods */ = {
+		2852132E1F05EF84002BE870 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				3BE262F905626E61292CE9D6 /* Pods-SocketAssit.debug.xcconfig */,
-				27B71B7140DDC08AFF76818A /* Pods-SocketAssit.release.xcconfig */,
+				2852132B1F05EF73002BE870 /* SocketViewModel.h */,
+				2852132C1F05EF73002BE870 /* SocketViewModel.m */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		285213321F05EFA6002BE870 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2852132F1F05EFA1002BE870 /* SocketModel.h */,
+				285213301F05EFA1002BE870 /* SocketModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		285213331F05EFB7002BE870 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				283DE6D21EAF37E7005FA830 /* SocketAssitViewController.h */,
+				283DE6D31EAF37E7005FA830 /* SocketAssitViewController.m */,
+				283DE6C41EAF37CD005FA830 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		33CC91FD23BFD3BAE052DD84 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4857BF8D2E1DC5F4185B2FEF /* Pods-SocketAssit.debug.xcconfig */,
+				DA4A8A90B38B29EE1687C0BC /* Pods-SocketAssit.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		B822D809E34233AA41E08338 /* Frameworks */ = {
+		C4BA72D3B3312D56DB3D0D7C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				28F6B785808D68EF731FD22C /* Pods_SocketAssit.framework */,
+				8C0CC42CF1407FD0753440B6 /* libPods-SocketAssit.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -110,12 +146,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 283DE6CF1EAF37CD005FA830 /* Build configuration list for PBXNativeTarget "SocketAssit" */;
 			buildPhases = (
-				77A90AB6CD1F8555276967CA /* [CP] Check Pods Manifest.lock */,
+				8F190858EC8A2A8F7FFD3FF9 /* [CP] Check Pods Manifest.lock */,
 				283DE6B41EAF37CD005FA830 /* Sources */,
 				283DE6B51EAF37CD005FA830 /* Frameworks */,
 				283DE6B61EAF37CD005FA830 /* Resources */,
-				E5498FA2F18127A5B6BB268E /* [CP] Embed Pods Frameworks */,
-				B7179A6A32B32B39DE8DCF11 /* [CP] Copy Pods Resources */,
+				20857745D1BDF57F1672F82A /* [CP] Embed Pods Frameworks */,
+				4A1F16832913692397C0AA65 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -137,7 +173,7 @@
 				TargetAttributes = {
 					283DE6B71EAF37CD005FA830 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = A8894S9NWM;
+						DevelopmentTeam = WAF35623UN;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -174,37 +210,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		77A90AB6CD1F8555276967CA /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		B7179A6A32B32B39DE8DCF11 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SocketAssit/Pods-SocketAssit-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E5498FA2F18127A5B6BB268E /* [CP] Embed Pods Frameworks */ = {
+		20857745D1BDF57F1672F82A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -219,6 +225,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SocketAssit/Pods-SocketAssit-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		4A1F16832913692397C0AA65 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SocketAssit/Pods-SocketAssit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F190858EC8A2A8F7FFD3FF9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -227,6 +263,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				283DE6D41EAF37E7005FA830 /* SocketAssitViewController.m in Sources */,
+				2852132D1F05EF73002BE870 /* SocketViewModel.m in Sources */,
+				285213311F05EFA1002BE870 /* SocketModel.m in Sources */,
 				283DE6C01EAF37CD005FA830 /* AppDelegate.m in Sources */,
 				283DE6BD1EAF37CD005FA830 /* main.m in Sources */,
 			);
@@ -348,10 +386,12 @@
 		};
 		283DE6D01EAF37CD005FA830 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3BE262F905626E61292CE9D6 /* Pods-SocketAssit.debug.xcconfig */;
+			baseConfigurationReference = 4857BF8D2E1DC5F4185B2FEF /* Pods-SocketAssit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = A8894S9NWM;
+				DEVELOPMENT_TEAM = WAF35623UN;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SocketAssit/PrefixHeader.pch";
 				INFOPLIST_FILE = SocketAssit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wanchen.SocketAssit;
@@ -361,10 +401,12 @@
 		};
 		283DE6D11EAF37CD005FA830 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 27B71B7140DDC08AFF76818A /* Pods-SocketAssit.release.xcconfig */;
+			baseConfigurationReference = DA4A8A90B38B29EE1687C0BC /* Pods-SocketAssit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = A8894S9NWM;
+				DEVELOPMENT_TEAM = WAF35623UN;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SocketAssit/PrefixHeader.pch";
 				INFOPLIST_FILE = SocketAssit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wanchen.SocketAssit;
