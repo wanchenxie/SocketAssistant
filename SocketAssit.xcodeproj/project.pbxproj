@@ -13,7 +13,6 @@
 		283DE6C81EAF37CD005FA830 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 283DE6C71EAF37CD005FA830 /* Assets.xcassets */; };
 		283DE6CB1EAF37CD005FA830 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 283DE6C91EAF37CD005FA830 /* LaunchScreen.storyboard */; };
 		283DE6D41EAF37E7005FA830 /* SocketAssitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 283DE6D31EAF37E7005FA830 /* SocketAssitViewController.m */; };
-		28439F051F0CB42B00ECD1AF /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 28439F041F0CB42B00ECD1AF /* README.md */; };
 		2852132D1F05EF73002BE870 /* SocketViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2852132C1F05EF73002BE870 /* SocketViewModel.m */; };
 		285213311F05EFA1002BE870 /* SocketModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 285213301F05EFA1002BE870 /* SocketModel.m */; };
 		34533F56E65F734A49A587F3 /* libPods-SocketAssit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0CC42CF1407FD0753440B6 /* libPods-SocketAssit.a */; };
@@ -30,7 +29,6 @@
 		283DE6CC1EAF37CD005FA830 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		283DE6D21EAF37E7005FA830 /* SocketAssitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketAssitViewController.h; sourceTree = "<group>"; };
 		283DE6D31EAF37E7005FA830 /* SocketAssitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketAssitViewController.m; sourceTree = "<group>"; };
-		28439F041F0CB42B00ECD1AF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		2852132B1F05EF73002BE870 /* SocketViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketViewModel.h; sourceTree = "<group>"; };
 		2852132C1F05EF73002BE870 /* SocketViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketViewModel.m; sourceTree = "<group>"; };
 		2852132F1F05EFA1002BE870 /* SocketModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketModel.h; sourceTree = "<group>"; };
@@ -87,7 +85,6 @@
 		283DE6BB1EAF37CD005FA830 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				28439F041F0CB42B00ECD1AF /* README.md */,
 				283DE6C71EAF37CD005FA830 /* Assets.xcassets */,
 				283DE6C91EAF37CD005FA830 /* LaunchScreen.storyboard */,
 				2856CC2E1F0B36D0000AF33C /* PrefixHeader.pch */,
@@ -265,7 +262,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28439F051F0CB42B00ECD1AF /* README.md in Sources */,
 				283DE6D41EAF37E7005FA830 /* SocketAssitViewController.m in Sources */,
 				2852132D1F05EF73002BE870 /* SocketViewModel.m in Sources */,
 				285213311F05EFA1002BE870 /* SocketModel.m in Sources */,
