@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+- (void)showAlertOnKeyWindowTitle:(NSString*)title msg:(NSString*)msg;
 
 @end
 

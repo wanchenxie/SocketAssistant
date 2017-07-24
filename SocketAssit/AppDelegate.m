@@ -15,6 +15,16 @@
 @implementation AppDelegate
 
 
+- (void)showAlertOnKeyWindowTitle:(NSString *)title msg:(NSString *)msg {
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:title message:msg preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* OK = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    
+    [alert addAction:OK];
+    
+    [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
+}
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     

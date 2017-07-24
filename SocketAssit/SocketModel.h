@@ -11,9 +11,12 @@
 #import "SocketViewModel.h"
 
 
+typedef void(^socketCallBack)(NSError* err);
+
 @protocol SocketModelDelegate <NSObject>
 
 - (void)socketModelConnectHostHostResult:(NSError*)error;
+- (void)socketModelSendDataResult:(NSError*)error;
 
 
 @end
@@ -28,6 +31,10 @@
 
 - (instancetype)init;
 - (void)connectToHost:(NSString*)host port:(NSInteger)port withHandler:(SocketConnectHandler)handler;
+- (void)synConnectToHost:(NSString *)host port:(NSInteger)port;
+
 - (void)disconnect;
+
+- (void)sendData:(NSData*)data;
 
 @end

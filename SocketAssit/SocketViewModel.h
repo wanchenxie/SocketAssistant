@@ -9,6 +9,13 @@
 #import <Foundation/Foundation.h>
 
 
+
+typedef enum : NSUInteger {
+    Syn_CmdOne = 1,
+    Syn_CmdTwo,
+    Syn_CmdThree,
+} SynCmd;
+
 typedef void(^SocketConnectHandler)(NSError* err);
 
 @class SocketViewModel;
@@ -39,8 +46,11 @@ typedef void(^SocketConnectHandler)(NSError* err);
 
 - (instancetype)initWithHost:(NSString*)host portNum:(NSInteger)port;
 
-- (void)connectWithHandler:(SocketConnectHandler)callBack;
 
 - (void)disconnect;
+
+- (void)queueCmd:(SynCmd)cmd;
+- (void)cancelSynThread;
+- (void)setupSynThread;
 
 @end

@@ -6,6 +6,7 @@
 //  Copyright © 2017 wanchenxie. All rights reserved.
 //
 
+#import "AppDelegate.h"
 #import "SocketAssitViewController.h"
 #import "GCDAsyncSocket.h"
 #import "MBProgressHUD.h"
@@ -27,6 +28,8 @@ NSString* sendDataKey = @"sendData";
 @property (strong, nonatomic) IBOutlet UILabel *statusLabel;
 @property (strong, nonatomic) IBOutlet UIButton *connectBtn;
 
+@property (strong, nonatomic) NSTimer* testTimer;
+
 
 
 @end
@@ -42,10 +45,14 @@ NSString* sendDataKey = @"sendData";
     
     self.socketViewModel = [[SocketViewModel alloc] init];
     
+    [self.socketViewModel setupSynThread];
+    
     
     
     // Add notification for app resign
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveCurInfo) name:UIApplicationWillResignActiveNotification object:nil];
+    
+    
     
     
 }
@@ -69,6 +76,30 @@ NSString* sendDataKey = @"sendData";
 
 
 #pragma mark - Private Methods
+- (void)testZone {
+    //[self disConnectOrConnectToHost:nil];
+    static NSInteger count = 0;
+    
+    
+    
+    if (count == 0) {
+        [self.socketViewModel queueCmd:Syn_CmdOne];
+    }
+    else if (count == 1) {
+        [self.socketViewModel queueCmd:Syn_CmdTwo];
+    }
+    else if (count == 2){
+        [self.socketViewModel queueCmd:Syn_CmdThree];
+    }
+    
+    
+    
+    if (++ count == 5) {
+        count = 1;
+        
+    }
+    
+}
 
 - (void)startToConnect {
     self.connectBtn.enabled = false;
@@ -141,6 +172,9 @@ NSString* sendDataKey = @"sendData";
     [self.view endEditing:YES];
 }
 
+- (IBAction)startTimer:(UIButton *)sender {
+    self.testTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(testZone) userInfo:nil repeats:YES];
+}
 
 - (IBAction)disConnectOrConnectToHost:(UIButton *)sender {
     
@@ -176,9 +210,16 @@ NSString* sendDataKey = @"sendData";
                     
                     [self endToConnect];
                     
+                    
                     if (err == nil) {
                         self.statusLabel.text = @"Connected";
                         [self.connectBtn setTitle:@"Disconnect" forState:UIControlStateNormal];
+                    }
+                    else {
+                        
+                        AppDelegate* delegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+                        
+                        [delegate showAlertOnKeyWindowTitle:@"Error" msg:@"Failed to connect."];
                     }
                 });
                 
@@ -230,6 +271,8 @@ NSString* sendDataKey = @"sendData";
 
 #pragma mark - SocketViewModelDelegate
 - (void)initSocketWithResult:(NSError *)err {
+    
+    
     
 }
 

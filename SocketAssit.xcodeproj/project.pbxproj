@@ -16,6 +16,7 @@
 		28439F071F0CBA8F00ECD1AF /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 28439F061F0CBA8F00ECD1AF /* README.md */; };
 		2852132D1F05EF73002BE870 /* SocketViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2852132C1F05EF73002BE870 /* SocketViewModel.m */; };
 		285213311F05EFA1002BE870 /* SocketModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 285213301F05EFA1002BE870 /* SocketModel.m */; };
+		28606B4B1F2598DD00772FB9 /* NSMutableArray+CmdQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 28606B4A1F2598DD00772FB9 /* NSMutableArray+CmdQueue.m */; };
 		34533F56E65F734A49A587F3 /* libPods-SocketAssit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0CC42CF1407FD0753440B6 /* libPods-SocketAssit.a */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,8 @@
 		2852132F1F05EFA1002BE870 /* SocketModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketModel.h; sourceTree = "<group>"; };
 		285213301F05EFA1002BE870 /* SocketModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketModel.m; sourceTree = "<group>"; };
 		2856CC2E1F0B36D0000AF33C /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		28606B491F2598DD00772FB9 /* NSMutableArray+CmdQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+CmdQueue.h"; sourceTree = "<group>"; };
+		28606B4A1F2598DD00772FB9 /* NSMutableArray+CmdQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+CmdQueue.m"; sourceTree = "<group>"; };
 		4857BF8D2E1DC5F4185B2FEF /* Pods-SocketAssit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocketAssit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocketAssit/Pods-SocketAssit.debug.xcconfig"; sourceTree = "<group>"; };
 		8C0CC42CF1407FD0753440B6 /* libPods-SocketAssit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SocketAssit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA4A8A90B38B29EE1687C0BC /* Pods-SocketAssit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocketAssit.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocketAssit/Pods-SocketAssit.release.xcconfig"; sourceTree = "<group>"; };
@@ -100,6 +103,8 @@
 		2852132E1F05EF84002BE870 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				28606B491F2598DD00772FB9 /* NSMutableArray+CmdQueue.h */,
+				28606B4A1F2598DD00772FB9 /* NSMutableArray+CmdQueue.m */,
 				2852132B1F05EF73002BE870 /* SocketViewModel.h */,
 				2852132C1F05EF73002BE870 /* SocketViewModel.m */,
 			);
@@ -176,7 +181,7 @@
 				TargetAttributes = {
 					283DE6B71EAF37CD005FA830 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = WAF35623UN;
+						DevelopmentTeam = PM2335U776;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -268,6 +273,7 @@
 				28439F071F0CBA8F00ECD1AF /* README.md in Sources */,
 				283DE6D41EAF37E7005FA830 /* SocketAssitViewController.m in Sources */,
 				2852132D1F05EF73002BE870 /* SocketViewModel.m in Sources */,
+				28606B4B1F2598DD00772FB9 /* NSMutableArray+CmdQueue.m in Sources */,
 				285213311F05EFA1002BE870 /* SocketModel.m in Sources */,
 				283DE6C01EAF37CD005FA830 /* AppDelegate.m in Sources */,
 				283DE6BD1EAF37CD005FA830 /* main.m in Sources */,
@@ -393,13 +399,16 @@
 			baseConfigurationReference = 4857BF8D2E1DC5F4185B2FEF /* Pods-SocketAssit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = WAF35623UN;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = PM2335U776;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SocketAssit/PrefixHeader.pch";
 				INFOPLIST_FILE = SocketAssit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wanchen.SocketAssit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gpe.SocketAssit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -408,13 +417,16 @@
 			baseConfigurationReference = DA4A8A90B38B29EE1687C0BC /* Pods-SocketAssit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = WAF35623UN;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = PM2335U776;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SocketAssit/PrefixHeader.pch";
 				INFOPLIST_FILE = SocketAssit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wanchen.SocketAssit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gpe.SocketAssit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
